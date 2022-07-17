@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Andrea's FV</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'><link rel="stylesheet" href="./npvcards.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="section">
+		<div class="container">
+			<div class="row full-height justify-content-center">
+				<div class="col-12 text-center align-self-center py-5">
+					<div class="section pb-5 pt-5 pt-sm-2 text-center">
+						<h6 class="mb-0 pb-3"><span>calculator </span><span>info</span><span><a href="index.html">Back</a></span></h6>
+			          	<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+			          	<label for="reg-log"></label>
+						<div class="card-3d-wrap mx-auto">
+							<div class="card-3d-wrapper">
+								<div class="card-front">
+									<div class="center-wrap">
+										<!---------NPV starts here-->
+										<div class="section text-center" id="loancal">
+											<h4 class="mb-4 pb-3">Future Value Calculator</h4>
+											<div class="form-group">
+												<input type="number" name="PV" class="form-style" placeholder="Present Value" id="a" onchange="Cal_FV()">
+												<i class="input-icon">
+													<span class="iconify" data-icon="bi:cash-coin" style="color: #ffeba7;"></span>
+												</i>
+											
+										
+											</div>	
+											<div class="form-group mt-2">
+												<input type="number" name="interest" class="form-style" placeholder="Interest rate" id="b" step=".1" onchange="Cal_FV()" min="1" max="100" required>
+												<i class="input-icon">
+													<span class="iconify" data-icon="icon-park-outline:percentage" style="color: #ffeba7;"></span>
+												</i>
+											</div>
+                      <div>
+                        <div class="form-group mt-2">
+												<input type="number" name="monthly" class="form-style" placeholder="Monthly term" id="c" min="1" max="12" onchange="Cal_FV()">
+												<i class="input-icon">
+													<span class="iconify" data-icon="akar-icons:calendar" style="color: #ffeba7;"></span>
+												</i>
+                        </div>
+                      </div>
+                     
+					  
+                      <h2 id="ans" style="margin-top:10px;"></h2>
+                      <script src="FV.js"></script>
+                            				<p class="mb-0 mt-4 text-center"><a href="https://www.thebalance.com/what-is-future-value-5093911">Need help?</a></p>
+                                          
+										
+				      					</div>
+			      					</div>
+			      				</div>
+                                
+								<div class="card-back">
+									<div class="center-wrap">
+										<!----------Unfixed amount starts here-->
+										<div class="section text-center">
+											<h4 class="mb-4 pb-3">Information</h4>
+											
+											<div class="form-group mt-2">
+											<p>Future value (FV) is the value of a current asset at a future date based on an assumed rate of growth. The future value is important to investors and financial planners, as they use it to estimate how much an investment made today will be worth in the future.</p>
+											</div>
+                      <div>
+                        <div class="form-group mt-2">
+												
+                        </div>
+                      </div>
+					  
+											
+                            				<p class="mb-0 mt-4 text-center"><a href="https://www.investopedia.com/terms/f/futurevalue.asp">Need help?</a></p>
+										
+				      					</div>
+                    
+			      					</div>
+			      				</div>
+			      			</div>
+			      		</div>
+			      	</div>
+		      	</div>
+	      	</div>
+	    </div>
+	</div>
+
+<!-- partial -->
+<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
