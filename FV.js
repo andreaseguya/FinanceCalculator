@@ -1,34 +1,39 @@
-function FV(PV,i,n){
-    var x=(1+i/100)
-    var FV=PV*(Math.pow(x,n))
-    return FV;
-    }
-    function PV(PMT, IR, NP) {
-        var PV = PMT * (1 - Math.pow(1 + IR, -NP)) / IR
-  
-        return PV;
-    }
-    function NPV(Cost, PMT, IR, NP = 1) {
-        return Math.abs(Cost - this.PV(PMT, IR, NP));
-    }
-    function getNPV(rate, initialCost, cashFlows) {
-        var npv = initialCost;
-      
-        for (var i = 0; i < cashFlows.length; i++) {
-          npv += cashFlows[i] / Math.pow(rate / 100 + 1, i + 1);
-        }
-      
-        return npv;
-      }
-    function Cal_FV(){
-    var pvalue=parseFloat(document.getElementById("a").value);
-    var interest=parseFloat(document.getElementById("b").value);
-    var num=parseInt(document.getElementById("c").value);
-    var fvalue=FV(pvalue, interest, num);
-    var fv=fvalue.toFixed(2);
-    document.getElementById('ans').textContent="The future value is: "+fv;
-    }
+const form = document.getElementById("futureValueForm");
+const result = document.getElementById("ans");
 
-   
+function calculateFutureValue() {
+	const presentValueInput = form.elements.presentValue;
+	const interestRateInput = form.elements.interestRate;
+	const monthsInput = form.elements.months;
+	const inputs = [presentValueInput, interestRateInput, monthsInput];
 
-       
+	if (inputs.some((input) => input.value === "")) {
+		result.textContent = "";
+		return;
+	}
+
+	if (!form.checkValidity()) {
+		result.textContent = "Check that the values are within the allowed ranges.";
+		return;
+	}
+
+	const presentValue = Number(presentValueInput.value);
+	const annualRate = Number(interestRateInput.value);
+	const months = Number(monthsInput.value);
+	const monthlyRate = annualRate / 100 / 12;
+	const futureValue = presentValue * Math.pow(1 + monthlyRate, months);
+
+	if (!Number.isFinite(futureValue)) {
+		result.textContent = "The result is outside the calculator's supported number range.";
+		return;
+	}
+
+	const formattedValue = new Intl.NumberFormat(undefined, {
+		minimumFractionDigits: 2,
+		maximumFractionDigits: 2,
+	}).format(futureValue);
+
+	result.textContent = `Future value after ${months} months: ${formattedValue}`;
+}
+
+form.addEventListener("input", calculateFutureValue);

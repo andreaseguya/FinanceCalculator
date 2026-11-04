@@ -22,11 +22,13 @@
 							<div class="card-3d-wrapper">
 								<div class="card-front">
 									<div class="center-wrap">
-										<!---------NPV starts here-->
+										<!---------Future value starts here-->
 										<div class="section text-center" id="loancal">
 											<h4 class="mb-4 pb-3">Future Value Calculator</h4>
+											<form id="futureValueForm" novalidate>
 											<div class="form-group">
-												<input type="number" name="PV" class="form-style" placeholder="Present Value" id="a" onchange="Cal_FV()">
+												<label class="sr-only" for="a">Present value</label>
+												<input type="number" name="presentValue" class="form-style" placeholder="Present value" id="a" min="0" step="any" required>
 												<i class="input-icon">
 													<span class="iconify" data-icon="bi:cash-coin" style="color: #ffeba7;"></span>
 												</i>
@@ -34,14 +36,16 @@
 										
 											</div>	
 											<div class="form-group mt-2">
-												<input type="number" name="interest" class="form-style" placeholder="Interest rate" id="b" step=".1" onchange="Cal_FV()" min="1" max="100" required>
+												<label class="sr-only" for="b">Annual interest rate (percent)</label>
+												<input type="number" name="interestRate" class="form-style" placeholder="Annual interest rate (%)" id="b" step="any" min="0" max="100" required>
 												<i class="input-icon">
 													<span class="iconify" data-icon="icon-park-outline:percentage" style="color: #ffeba7;"></span>
 												</i>
 											</div>
                       <div>
                         <div class="form-group mt-2">
-												<input type="number" name="monthly" class="form-style" placeholder="Monthly term" id="c" min="1" max="12" onchange="Cal_FV()">
+												<label class="sr-only" for="c">Term in months</label>
+												<input type="number" name="months" class="form-style" placeholder="Term (months)" id="c" min="1" max="12" step="1" required>
 												<i class="input-icon">
 													<span class="iconify" data-icon="akar-icons:calendar" style="color: #ffeba7;"></span>
 												</i>
@@ -49,8 +53,8 @@
                       </div>
                      
 					  
-                      <h2 id="ans" style="margin-top:10px;"></h2>
-                      <script src="FV.js"></script>
+                      <h2 id="ans" aria-live="polite" style="margin-top:10px;"></h2>
+											</form>
                             				<p class="mb-0 mt-4 text-center"><a href="https://www.thebalance.com/what-is-future-value-5093911">Need help?</a></p>
                                           
 										
@@ -65,7 +69,7 @@
 											<h4 class="mb-4 pb-3">Information</h4>
 											
 											<div class="form-group mt-2">
-											<p>Future value (FV) is the value of a current asset at a future date based on an assumed rate of growth. The future value is important to investors and financial planners, as they use it to estimate how much an investment made today will be worth in the future.</p>
+											<p>Future value (FV) estimates what an amount invested today may be worth at a future date, based on an assumed rate of growth. This calculator treats the interest rate as an annual rate, compounds it monthly, and measures the term in months. It assumes the rate stays constant and no additional deposits or withdrawals are made.</p>
 											</div>
                       <div>
                         <div class="form-group mt-2">
@@ -89,6 +93,7 @@
 	</div>
 
 <!-- partial -->
+<script src="./FV.js"></script>
 <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
