@@ -45,6 +45,109 @@
   .full-height{
     min-height: 100vh;
   }
+  .npv-page {
+    padding: 48px 16px;
+  }
+  .npv-calculator {
+    width: min(100%, 680px);
+    margin: 0 auto;
+    padding: 32px;
+    background: #2a2b38;
+    border-radius: 8px;
+  }
+  .npv-calculator h1 {
+    margin-bottom: 8px;
+  }
+  .npv-intro {
+    margin-bottom: 24px;
+    color: #c4c3ca;
+  }
+  .npv-calculator-form {
+    display: grid;
+    gap: 16px;
+    text-align: left;
+  }
+  .npv-calculator-form > div > label,
+  .cash-flow-row label,
+  .cash-flow-legend {
+    display: block;
+    margin-bottom: 6px;
+    color: #ffeba7;
+    font-weight: 600;
+  }
+  .npv-calculator-form .form-style {
+    padding-left: 16px;
+  }
+  .cash-flows {
+    display: grid;
+    gap: 12px;
+  }
+  .cash-flow-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px 12px;
+    align-items: end;
+  }
+  .cash-flow-row label {
+    grid-column: 1 / -1;
+    margin-bottom: -8px;
+  }
+  .cash-flow-row .form-style {
+    min-width: 0;
+  }
+  .remove-cash-flow {
+    padding: 8px;
+    border: 0;
+    background: transparent;
+    color: #ffeba7;
+    cursor: pointer;
+  }
+  .remove-cash-flow:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  .remove-cash-flow:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+  .npv-calculator .btn {
+    justify-self: start;
+  }
+  .npv-result {
+    min-height: 1.7em;
+    margin: 0;
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+  }
+  .npv-result.positive {
+    color: #b8f2c2;
+  }
+  .npv-result.negative,
+  .npv-result.error {
+    color: #ffb4b4;
+  }
+  .npv-back-link {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: #ffeba7;
+  }
+  .cash-flow-legend {
+    margin-bottom: 8px;
+  }
+  .cash-flow-fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .add-cash-flow {
+    margin-top: 12px;
+  }
+  @media (max-width: 480px) {
+    .npv-calculator {
+      padding: 24px 18px;
+    }
+  }
   [type="checkbox"]:checked,
   [type="checkbox"]:not(:checked){
     position: absolute;
@@ -288,4 +391,3 @@
     width: auto;
     display: block;
   }
-
