@@ -615,4 +615,33 @@ body {
   }
     
   }
+
+/* Scale the homepage as one unit instead of rearranging its hexagon layout. */
+.site-wrapper {
+  zoom: clamp(0.5, calc(100vw / 1074px), 1);
+}
+
+.page-home .hexagon-menu {
+  position: relative;
+  left: 50%;
+  width: 800px;
+  transform: translateX(-50%);
+}
+
+@media only screen and (max-width: 767px) {
+  .page-home .hexagon-item {
+    float: left;
+    margin: 0 0 0 -29px;
+  }
+
+  .page-home .hexagon-item:first-child {
+    margin-left: 0;
+  }
+
+  .page-home .hexagon-item:nth-last-child(1),
+  .page-home .hexagon-item:nth-last-child(2),
+  .page-home .hexagon-item:nth-last-child(3) {
+    transform: rotate(30deg) translate(87px, -80px);
+  }
+}
   
