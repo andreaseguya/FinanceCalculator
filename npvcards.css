@@ -391,3 +391,55 @@
     width: auto;
     display: block;
   }
+
+  .loan-calculator-card {
+    height: 470px;
+  }
+
+  .loan-calculator-card .loan-results {
+    display: grid;
+    gap: 5px;
+    margin-top: 12px;
+    text-align: left;
+  }
+
+  .loan-calculator-card .loan-result {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0;
+  }
+
+  .loan-calculator-card .loan-result-label {
+    color: #c4c3ca;
+  }
+
+  .loan-calculator-card .loan-result-value {
+    color: #ffeba7;
+    font-weight: 600;
+    text-align: right;
+  }
+
+  .loan-calculator-card .loan-result-primary {
+    display: block;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(196, 195, 202, 0.25);
+  }
+
+  .loan-calculator-card .loan-result-primary .loan-result-value {
+    display: block;
+    font-size: 1.35rem;
+    text-align: left;
+  }
+
+  .loan-calculator-card .loan-disclaimer {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 480px) {
+    .loan-calculator-card {
+      height: 500px;
+    }
+  }
