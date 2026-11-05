@@ -4,6 +4,7 @@ const { defineConfig } = require("vite");
 const pages = [
   "index",
   "futureValue",
+  "help",
   "loans",
   "login",
   "npvcards",
